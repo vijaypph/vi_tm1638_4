@@ -1,0 +1,14 @@
+../Core/Src/TM1638.c:91:1:TM1638_StartComunication	1
+../Core/Src/TM1638.c:97:1:TM1638_StopComunication	1
+../Core/Src/TM1638.c:103:1:TM1638_WriteBytes	3
+../Core/Src/TM1638.c:124:1:TM1638_ReadBytes	3
+../Core/Src/TM1638.c:150:1:TM1638_SetMultipleDisplayRegister	1
+../Core/Src/TM1638.c:170:1:TM1638_ScanKeyRegs	1
+../Core/Src/TM1638.c:202:1:TM1638_Init	3
+../Core/Src/TM1638.c:229:1:TM1638_DeInit	1
+../Core/Src/TM1638.c:264:1:TM1638_ConfigDisplay	2
+../Core/Src/TM1638.c:294:1:TM1638_SetSingleDigit	2
+../Core/Src/TM1638.c:323:1:TM1638_SetMultipleDigit	8
+../Core/Src/TM1638.c:384:1:TM1638_SetSingleDigit_HEX	8
+../Core/Src/TM1638.c:458:1:TM1638_SetMultipleDigit_HEX	9
+../Core/Src/TM1638.c:546:1:TM1638_ScanKeys	5
