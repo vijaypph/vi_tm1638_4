@@ -96,13 +96,48 @@ int main(void)
   	  TM1638_ConfigDisplay(&Handler, 1, TM1638DisplayStateOFF);
   	  HAL_Delay(100);
   	TM1638_ConfigDisplay(&Handler, 7, TM1638DisplayStateON);
+  	 TM1638_SetSingleDigit_HEX(&Handler, 0, 2);
+  		     HAL_Delay(100);
+  		     TM1638_SetSingleDigit_HEX(&Handler, 0, 4);
  //uint8_t d=112;
   	 uint8_t i=0;
-  	uint32_t keys = 0;
+  	uint32_t keys = 0,sw1,sw2,sw3,sw4,sw5,sw6,sw7;
   	int status =0;
 //const uint8_t test[]={0x06,  0x5B, 0X3F,0x4F,  0x66, 0x6D,  0x7D,  0x07,  0x7F,  0x6F,0x77, 0x7c, 0x39, 0x5E, 0x79, 0x71};
   /* USER CODE END 2 */
 
+/*sw1=0x20000000;
+sw2=0x02000000;
+sw3=0x00200000;
+sw4=0x00020000;
+sw5=0x00002000;
+sw6=0x00000200;
+sw7=0x00000020;
+uint32_t scan_reg=0;
+scan_reg=TM1638_ScanKeys(&Handler,&keys);
+scan_reg &=0xFFFFFFF;
+if (scan_ref==sw1)
+	{
+	TM1638_SetSingleDigit_HEX(&Handler, 1, 0);
+	}
+
+else if(scan_ref==sw2)
+	TM1638_SetSingleDigit_HEX(&Handler, 2, 0);
+else if(scan_ref==sw3)
+	TM1638_SetSingleDigit_HEX(&Handler, 3, 0);
+
+else if(scan_ref==sw4)
+	TM1638_SetSingleDigit_HEX(&Handler, 4, 0);
+
+else if(scan_ref==sw5)
+	TM1638_SetSingleDigit_HEX(&Handler, 5, 0);
+
+else if(scan_ref==sw6)
+	TM1638_SetSingleDigit_HEX(&Handler, 6, 0);
+
+else if(scan_ref==sw7)
+	TM1638_SetSingleDigit_HEX(&Handler, 7, 0);*/
+  	TM1638_SetSingleDigit_HEX(&Handler, 0, 0);
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
@@ -116,19 +151,69 @@ int main(void)
 	   for (i = 0; i < 9; i++) {
 		  // TM1638_ConfigDisplay(&Handler, 7, TM1638DisplayStateON);
 		  // HAL_Delay(1000);
-	     TM1638_SetSingleDigit_HEX(&Handler, i, 0);
+	   //TM1638_SetSingleDigit_HEX(&Handler, i, 0);
 	     HAL_Delay(100);
-	     TM1638_SetSingleDigit_HEX(&Handler, i, 2);
+	     /*TM1638_SetSingleDigit_HEX(&Handler, i, 2);
 	     HAL_Delay(100);
-	     TM1638_SetSingleDigit_HEX(&Handler, i, 4);
+	     TM1638_SetSingleDigit_HEX(&Handler, i, 4);*/
 
 	     status = TM1638_ScanKeys(&Handler,&keys);
-	     if (status == 0) {
+	    // status&=0x0000000F;
+	     if ((status==0)&& (keys == 1)) {
 	            // Display or use the scanned keys
-	            printf("Scanned keys: %u\n", keys);
-	        } else {
-	            printf("Error scanning keys!\n");
+	    	// HAL_GPIO_TogglePin(GPIOC, LED_PIN);
+	    	 TM1638_SetSingleDigit_HEX(&Handler, 1, 0);
+
+	    	// TM1638_SetSingleDigit_HEX(&Handler, 2, 0);
+	          //  printf("Scanned keys: %d\n", keys);
+	        } else if((status==0)&& (keys == 2))
+			{
+
+	        	 TM1638_SetSingleDigit_HEX(&Handler, 2, 0);
+
+	        	// TM1638_SetSingleDigit_HEX(&Handler, ' ', 0);
+	        	// printf("Error scanning keys!\n");
 	        }
+	        else if ((status==0)&& (keys == 8)) {
+	            // Display or use the scanned keys
+	    	// HAL_GPIO_TogglePin(GPIOC, LED_PIN);
+	    	 TM1638_SetSingleDigit_HEX(&Handler, 3, 0);
+
+	    	// TM1638_SetSingleDigit_HEX(&Handler, 2, 0);
+	          //  printf("Scanned keys: %d\n", keys);
+	        } else if((status==0)&& (keys == 4))
+			{
+
+	        	 TM1638_SetSingleDigit_HEX(&Handler, 4, 0);
+
+	        	// TM1638_SetSingleDigit_HEX(&Handler, ' ', 0);
+	        	// printf("Error scanning keys!\n");
+	        }
+	        else if ((status==0)&& (keys == 16)) {
+	        	            // Display or use the scanned keys
+	        	    	// HAL_GPIO_TogglePin(GPIOC, LED_PIN);
+	        	    	 TM1638_SetSingleDigit_HEX(&Handler, 5, 0);
+
+	        	    	// TM1638_SetSingleDigit_HEX(&Handler, 2, 0);
+	        	          //  printf("Scanned keys: %d\n", keys);
+	        	        } else if((status==0)&& (keys == 32))
+	        			{
+
+	        	        	 TM1638_SetSingleDigit_HEX(&Handler, 6, 0);
+
+	        	        	// TM1638_SetSingleDigit_HEX(&Handler, ' ', 0);
+	        	        	// printf("Error scanning keys!\n");
+	        	        }
+	        	        else if((status==0)&& (keys == 64))
+	        	        	        			{
+
+	        	        	        	        	 TM1638_SetSingleDigit_HEX(&Handler, 7, 0);
+
+	        	        	        	        	// TM1638_SetSingleDigit_HEX(&Handler, ' ', 0);
+	        	        	        	        	// printf("Error scanning keys!\n");
+	        	        	        	        }
+
+
 	     /*HAL_Delay(100);
 	     TM1638_SetSingleDigit_HEX(&Handler, ' ', 6);
 	     	     HAL_Delay(100);
@@ -175,7 +260,6 @@ int main(void)
 
 	  	HAL_Delay(100);
 	     //TM1638_ConfigDisplay(&Handler, 7, TM1638DisplayStateOFF);
-	     HAL_GPIO_TogglePin(GPIOC, LED_PIN);
 	       	//  HAL_Delay(1000);
 
 

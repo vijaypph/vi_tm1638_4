@@ -11,4 +11,4 @@
 ../Core/Src/TM1638.c:323:1:TM1638_SetMultipleDigit	32	static
 ../Core/Src/TM1638.c:384:1:TM1638_SetSingleDigit_HEX	24	static
 ../Core/Src/TM1638.c:458:1:TM1638_SetMultipleDigit_HEX	40	static
-../Core/Src/TM1638.c:546:1:TM1638_ScanKeys	32	static
+../Core/Src/TM1638.c:547:1:TM1638_ScanKeys	32	static
