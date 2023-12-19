@@ -4,9 +4,9 @@
  *  Created on: Dec 19, 2023
  *      Author: Lenovo
  */
-void bar_led_status(void)
+void bar_led_status(*Handler)
 {
-
+	TM1638_SetSingleDigit_HEX(&Handler, 6, 2);
 
 }
 

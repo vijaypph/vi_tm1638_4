@@ -114,7 +114,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-	   for (i = 0; i < 9; i++) {
+	 //  for (i = 0; i < 9; i++) {
 
 	     HAL_Delay(100);
 	     status = TM1638_ScanKeys(&Handler,&keys);
@@ -126,15 +126,19 @@ int main(void)
 	                 //TM1638_SetSingleDigit_HEX(&Handler, 1, 0);
 	                 break;
 	             case DECREMENT :
-	            	 	 	 bar_led_status();
-	                 TM1638_SetSingleDigit_HEX(&Handler, 2, 0);
+	            	 	 	// bar_led_status();
+	            	 HAL_GPIO_TogglePin(GPIOC, LED_PIN);
+	            	 	            	// TM1638_SetSingleDigit_HEX(&Handler, i++, 0);
+	            	 	            	 //if(i==10) i=0;
+	                // i++;
 	                 break;
 	             case START_STOP:
 	            	 StartMachine();
 	                 //TM1638_SetSingleDigit_HEX(&Handler, 4, 0);
 	                 break;
 	             case INCREMENT:
-	            	 bar_led_status();
+	            	// bar_led_status();
+
 	                 //TM1638_SetSingleDigit_HEX(&Handler, 1, 0);
 	                 break;
 	             case ULTRA_SELECT:
@@ -154,7 +158,7 @@ int main(void)
 	         }
 	     }
 	  	HAL_Delay(100);
-	  }
+	//  }
   }
   TM1638_DeInit(&Handler);
     return 0;

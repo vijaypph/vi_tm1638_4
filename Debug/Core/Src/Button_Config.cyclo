@@ -1,5 +1,0 @@
-../Core/Src/Button_Config.c:7:6:bar_led_status	1
-../Core/Src/Button_Config.c:13:6:UltraSelect	1
-../Core/Src/Button_Config.c:19:6:MotorSelect	1
-../Core/Src/Button_Config.c:24:6:StartMachine	1
-../Core/Src/Button_Config.c:29:6:ReverseForward	1

@@ -5,6 +5,7 @@
  *      Author: Lenovo
  */
 
+
 #ifndef INC_BUTTON_CONFIG_H_
 #define INC_BUTTON_CONFIG_H_
 #define R_F 1
@@ -15,7 +16,7 @@
 #define MOTOR_SELECT 32
 #define BLANK 64
 
-void bar_led_status(void);
+void bar_led_status(*Handler);
 void UltraSelect(void);
 void MotorSelect(void);
 void StartMachine(void);
