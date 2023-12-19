@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include "TM1638.h"
 #include "TM1638_platform.h"
+#include "Button_Config.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,7 +102,7 @@ int main(void)
   		     TM1638_SetSingleDigit_HEX(&Handler, 0, 4);
  //uint8_t d=112;
   	 uint8_t i=0;
-  	uint32_t keys = 0,sw1,sw2,sw3,sw4,sw5,sw6,sw7;
+  	uint32_t keys = 0;//,sw1,sw2,sw3,sw4,sw5,sw6,sw7;
   	int status =0;
 
   /* USER CODE END 2 */
@@ -120,26 +121,32 @@ int main(void)
 
 	     if (status == 0) {
 	         switch (keys) {
-	             case 1:
-	                 TM1638_SetSingleDigit_HEX(&Handler, 1, 0);
+	             case R_F :
+	            	 ReverseForward();
+	                 //TM1638_SetSingleDigit_HEX(&Handler, 1, 0);
 	                 break;
-	             case 2:
+	             case DECREMENT :
+	            	 	 	 bar_led_status();
 	                 TM1638_SetSingleDigit_HEX(&Handler, 2, 0);
 	                 break;
-	             case 4:
-	                 TM1638_SetSingleDigit_HEX(&Handler, 4, 0);
+	             case START_STOP:
+	            	 StartMachine();
+	                 //TM1638_SetSingleDigit_HEX(&Handler, 4, 0);
 	                 break;
-	             case 8:
-	                 TM1638_SetSingleDigit_HEX(&Handler, 3, 0);
+	             case INCREMENT:
+	            	 bar_led_status();
+	                 //TM1638_SetSingleDigit_HEX(&Handler, 1, 0);
 	                 break;
-	             case 16:
-	                 TM1638_SetSingleDigit_HEX(&Handler, 5, 0);
+	             case ULTRA_SELECT:
+	            	 UltraSelect();
+	                 //TM1638_SetSingleDigit_HEX(&Handler, 5, 0);
 	                 break;
-	             case 32:
-	                 TM1638_SetSingleDigit_HEX(&Handler, 6, 0);
+	             case MOTOR_SELECT:
+	            	 MotorSelect();
+	                 //TM1638_SetSingleDigit_HEX(&Handler, 6, 0);
 	                 break;
-	             case 64:
-	                 TM1638_SetSingleDigit_HEX(&Handler, 7, 0);
+	             case BLANK:
+	                 //TM1638_SetSingleDigit_HEX(&Handler, 7, 0);
 	                 break;
 	             default:
 	                 // Handle other cases if needed

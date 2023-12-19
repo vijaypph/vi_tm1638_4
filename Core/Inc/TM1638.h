@@ -60,7 +60,8 @@ extern "C" {
 
 #define TM1638DecimalPoint    0x80
 
-  
+
+
 /* Exported Data Types ----------------------------------------------------------*/
 /**
  * @brief  Handler data type

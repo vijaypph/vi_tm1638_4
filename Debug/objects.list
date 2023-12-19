@@ -1,3 +1,4 @@
+"./Core/Src/Button_Config.o"
 "./Core/Src/TM1638.o"
 "./Core/Src/TM1638_platform.o"
 "./Core/Src/main.o"
