@@ -98,6 +98,8 @@ int main(void)
   	TM1638_ConfigDisplay(&Handler, 7, TM1638DisplayStateON);
  //uint8_t d=112;
   	 uint8_t i=0;
+  	uint32_t keys = 0;
+  	int status =0;
 //const uint8_t test[]={0x06,  0x5B, 0X3F,0x4F,  0x66, 0x6D,  0x7D,  0x07,  0x7F,  0x6F,0x77, 0x7c, 0x39, 0x5E, 0x79, 0x71};
   /* USER CODE END 2 */
 
@@ -119,6 +121,14 @@ int main(void)
 	     TM1638_SetSingleDigit_HEX(&Handler, i, 2);
 	     HAL_Delay(100);
 	     TM1638_SetSingleDigit_HEX(&Handler, i, 4);
+
+	     status = TM1638_ScanKeys(&Handler,&keys);
+	     if (status == 0) {
+	            // Display or use the scanned keys
+	            printf("Scanned keys: %u\n", keys);
+	        } else {
+	            printf("Error scanning keys!\n");
+	        }
 	     /*HAL_Delay(100);
 	     TM1638_SetSingleDigit_HEX(&Handler, ' ', 6);
 	     	     HAL_Delay(100);
