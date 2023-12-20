@@ -1,5 +1,5 @@
-../Core/Src/Button_Config.c:7:6:bar_led_status	4	static
-../Core/Src/Button_Config.c:13:6:UltraSelect	4	static
-../Core/Src/Button_Config.c:19:6:MotorSelect	4	static
-../Core/Src/Button_Config.c:24:6:StartMachine	4	static
-../Core/Src/Button_Config.c:29:6:ReverseForward	4	static
+../Core/Src/Button_Config.c:12:6:bar_led_status	8	static
+../Core/Src/Button_Config.c:19:6:UltraSelect	8	static
+../Core/Src/Button_Config.c:26:6:MotorSelect	4	static
+../Core/Src/Button_Config.c:31:6:StartMachine	4	static
+../Core/Src/Button_Config.c:36:6:ReverseForward	4	static
