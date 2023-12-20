@@ -6,7 +6,7 @@
  */
 void bar_led_status(*Handler)
 {
-	TM1638_SetSingleDigit_HEX(&Handler, 6, 2);
+	TM1638_SetSingleDigit_HEX(*Handler, 6, 2);
 
 }
 
