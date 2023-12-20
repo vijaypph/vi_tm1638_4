@@ -127,6 +127,8 @@ int main(void)
 	                 break;
 	             case DECREMENT :
 	            	 	 	// bar_led_status();
+	      		     HAL_Delay(100);
+
 	            	 HAL_GPIO_TogglePin(GPIOC, LED_PIN);
 	            	 	            	// TM1638_SetSingleDigit_HEX(&Handler, i++, 0);
 	            	 	            	 //if(i==10) i=0;

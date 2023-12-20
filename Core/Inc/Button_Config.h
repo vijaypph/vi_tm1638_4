@@ -16,7 +16,7 @@
 #define MOTOR_SELECT 32
 #define BLANK 64
 
-void bar_led_status(*Handler);
+void bar_led_status(void);
 void UltraSelect(void);
 void MotorSelect(void);
 void StartMachine(void);
